@@ -1,0 +1,9 @@
+/* html{
+    font-size: 0px;
+} */
+
+#listData, #idData, #create, #delete, #listAnimal{
+    margin: 5px;
+    padding: 5px;
+    border-style: solid;
+}

@@ -3,12 +3,39 @@
     <head>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Testing -->
+
+        <!-- Testing Scripts -->
         <script src="main.js"></script>
         <script src="api.js"></script>
+        <link rel="stylesheet" href="style.css">
         
     </head>
     <body>
-        <button id="getDataButton">Test</button>
+        
+        <div id="listData">
+            <div id="listContent">A</div>
+            <button id="getDataButton">List of Animals</button>
+        </div>
+        <br>
+        <div id="idData">
+            <input type="text" id="createDataButton" value="Find Animal">
+            <p>Find animal based on id</p>
+            <button id="create">Search</button>
+        </div>
+        <br>
+        <div id="create">
+            <input type="text" id="commonName" value="Animal Name">
+            <input type="text" id="scientificName" value="Scientific Name">
+            <input type="text" id="family" value="Family">
+            <input type="text" id="imageURL" value="Image URL">
+            <p>Create a new animal</p>
+            <button id="create">Create</button>
+        </div>
+        <br>
+        <div id="delete">
+            <input type="text" id="deleteDataButton" value="Delete Animal">
+            <p>Delete an animal based on id</p>
+            <button id="delete">Delete</button>
+        </div>
     </body>
 </html>
