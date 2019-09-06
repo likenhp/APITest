@@ -3,12 +3,41 @@
     <head>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Testing -->
+
+        <!-- Testing Scripts -->
         <script src="main.js"></script>
         <script src="api.js"></script>
+        <link rel="stylesheet" href="style.css">
         
     </head>
     <body>
-        <button id="getDataButton">Test</button>
+        
+        <div id="listData">
+            <div id="listContent"></div>
+            <button id="getDataButton">List of Animals</button>
+        </div>
+        <br>
+        <div id="idData">
+                <div id="animalContent"></div>
+            <input type="text" id="findAnimal" placeholder="Animal ID">
+            <p>Find animal based on id</p>
+            <button id="findAnimalButton">Search</button>
+        </div>
+        <br>
+        <div id="create">
+            <div id="createContent"></div>
+            <input type="text" id="commonName" placeholder="Animal Name">
+            <input type="text" id="scientificName" placeholder="Scientific Name">
+            <input type="text" id="family" placeholder="Family">
+            <input type="text" id="imageURL" placeholder="Image URL">
+            <p>Create a new animal</p>
+            <button id="createButton">Create</button>
+        </div>
+        <br>
+        <div id="delete">
+            <input type="text" id="deleteData" placeholder="Animal ID">
+            <p>Delete an animal based on id</p>
+            <button id="deleteButton">Delete</button>
+        </div>
     </body>
 </html>
