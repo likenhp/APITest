@@ -56,7 +56,6 @@ class APIData{
             alert("Must fill out all fields");
             return;
         }
-        debugger;
         /* Checking to see if the values are strings and not numbers*/
         this.mustBeNumber = /^[0-9]+$/;
         this.regex = new RegExp(this.mustBeNumber);
@@ -72,11 +71,13 @@ class APIData{
             alert("Family Name not valid");
             return;
         }
-        // if(/^https?:\/\//.test(this.imageURL)){
-        //     alert("imageURL not valid");
-        //     return;
-        // }
-
+        /* Test to see if the link is a valid URL */
+        this.http = /^https?:\/\//;
+        this.regexHttp = new RegExp(this.http);
+        if(!this.regexHttp.test(this.imageURL)){
+            alert("imageURL not valid, must contain https:// or http://");
+            return;
+        }
         this.handlecreateAnimal(this.commonName, this.scientificName, this.family, this.imageURL);
     }
 
@@ -122,11 +123,12 @@ class APIData{
                 return
             }
             for(let key in resp.list){
+                /* Test to see if animal is already in list, will not run if animal already exists (no duplicates) */
                 if(!$("#listContent #listAnimal").hasClass(resp.list[key].id)){
                 this.animal = $("<div>",{id: "listAnimal","class": resp.list[key].id});
                 this.animalId = $("<div>",{"class": "animalId"}).text(resp.list[key].id);
                 this.animalCommonName = $("<div>",{"class": "animalName"}).text(resp.list[key].commonName);
-                this.imageURL = $("<div>",{"class": "imageURL"}).text(resp.list[key].imageURL);
+                this.imageURL = $("<a>",{"href": `${imageURL}`}).attr('target','_blank').text(resp.list[key].imageURL);
                 this.animal.append(this.animalId, this.animalCommonName, this.imageURL);
                 $("#listContent").append(this.animal);
                 }
@@ -151,7 +153,7 @@ class APIData{
             this.animal = $("<div>",{id: "listAnimal","class": resp.animal.id});
             this.animalId = $("<div>",{"class": "animalId"}).text(resp.animal.id);
             this.animalCommonName = $("<div>",{"class": "animalName"}).text(resp.animal.commonName);
-            this.imageURL = $("<div>",{"class": "imageURL"}).text(resp.animal.imageURL);
+            this.imageURL = $("<a>",{"href": `${imageURL}`}).attr('target','_blank').text(resp.animal.imageURL);
             this.scienceName = $("<div>",{"class": "scienceName"}).text(resp.animal.scientificName);
             this.family = $("<div>",{"class": "scienceName"}).text(resp.animal.family)
             this.animal.append(this.animalId, this.animalCommonName, this.scienceName, this.family, this.imageURL);
