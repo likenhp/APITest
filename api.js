@@ -5,8 +5,6 @@ class APIData{
         this.error = null;
         this.number = null;
 
-        //this.value = this.value.bind(this);
-
         this.handleAPIData = this.handleAPIData.bind(this);
         this.handleAPIDataSuccess = this.handleAPIDataSuccess.bind(this);
         this.handleAnimalSearch = this.handleAnimalSearch.bind(this);
@@ -207,6 +205,6 @@ class APIData{
     }
 
     handleAPIError(resp){
-        alert("Error: " +resp.status);
+        alert("Error: " + resp.status);
     }
 }
