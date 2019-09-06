@@ -7,4 +7,5 @@ function intitalize(){
     api.addEventHandlers();
     // api.handleAPIData();
     $("#listContent").hide();
+    $("#animalContent").hide();
 }
